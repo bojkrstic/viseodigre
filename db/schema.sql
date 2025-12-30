@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS vesti (
+  id SERIAL PRIMARY KEY,
+  kategorija VARCHAR(50) NOT NULL DEFAULT 'Vesti',
+  naslov TEXT NOT NULL,
+  sadrzaj TEXT NOT NULL,
+  datum DATE NOT NULL DEFAULT CURRENT_DATE,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS idx_vesti_datum ON vesti (datum DESC);

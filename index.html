@@ -113,22 +113,62 @@
           <a class="btn" href="#">Sve vesti</a>
         </div>
 
-        <div class="grid3">
-          <article class="card">
-            <div class="meta"><span class="pill">Vesti</span><span>• 24.12.2025</span></div>
-            <h4 style="margin:10px 0 8px">Pobeda u poslednjem kolu godine</h4>
-            <p style="margin:0; color:var(--muted); font-size:13px">Odlična energija i timska igra – ulazimo u novu godinu sa samopouzdanjem.</p>
-          </article>
-          <article class="card">
-            <div class="meta"><span class="pill">Trening</span><span>• 22.12.2025</span></div>
-            <h4 style="margin:10px 0 8px">Otvoren trening za nove igrače</h4>
-            <p style="margin:0; color:var(--muted); font-size:13px">Ako želiš da treniraš sa nama, javi se – termini su prilagođeni rekreativcima.</p>
-          </article>
-          <article class="card">
-            <div class="meta"><span class="pill">Klub</span><span>• 18.12.2025</span></div>
-            <h4 style="margin:10px 0 8px">Novi dresovi i podrška sponzora</h4>
-            <p style="margin:0; color:var(--muted); font-size:13px">Hvala partnerima na podršci – uskoro predstavljamo novu garnituru.</p>
-          </article>
+        <p class="muted" data-news-loading>Učitavanje objava...</p>
+        <div class="grid3" data-news-list></div>
+        <p class="muted" data-news-empty hidden>Još nema objavljenih vesti.</p>
+
+        <div class="card adminPanel" data-admin-panel>
+          <div data-login-view>
+            <h4 style="margin:0 0 8px">Prijava za urednike</h4>
+            <p style="margin:0 0 12px; color:var(--muted)">Unesi korisničko ime i lozinku da bi uređivao vesti direktno sa sajta.</p>
+            <form data-login-form>
+              <div class="field">
+                <label for="login-username">Korisničko ime</label>
+                <input id="login-username" name="username" required placeholder="npr. urednik" />
+              </div>
+              <div class="field">
+                <label for="login-password">Lozinka</label>
+                <input id="login-password" name="password" type="password" required placeholder="••••••" />
+              </div>
+              <button class="btn primary" type="submit">Prijavi se</button>
+            </form>
+            <p class="muted" data-login-feedback hidden></p>
+          </div>
+
+          <div data-admin-view hidden>
+            <div class="adminTop">
+              <div>
+                <h4 style="margin:0">Upravljanje vestima</h4>
+                <p style="margin:4px 0 0; color:var(--muted)" data-form-title>Nova vest</p>
+              </div>
+              <button class="btn" type="button" data-logout>Odjava</button>
+            </div>
+
+            <form data-news-form>
+              <div class="field">
+                <label for="news-category">Kategorija</label>
+                <input id="news-category" name="kategorija" placeholder="Vesti, Trening, Klub..." value="Vesti" required />
+              </div>
+              <div class="field">
+                <label for="news-title">Naslov</label>
+                <input id="news-title" name="naslov" required placeholder="Npr. Pobeda u derbiju" />
+              </div>
+              <div class="field">
+                <label for="news-date">Datum</label>
+                <input id="news-date" name="datum" type="date" required />
+              </div>
+              <div class="field">
+                <label for="news-content">Sadržaj</label>
+                <textarea id="news-content" name="sadrzaj" rows="4" required placeholder="Kratak opis vesti..."></textarea>
+              </div>
+              <div class="formActions">
+                <button class="btn" type="button" data-cancel-edit hidden>Otkaži izmenu</button>
+                <button class="btn primary" type="submit" data-submit-btn>Dodaj vest</button>
+              </div>
+            </form>
+            <p class="muted" data-news-feedback hidden></p>
+            <div class="adminList" data-admin-list></div>
+          </div>
         </div>
       </div>
     </section>

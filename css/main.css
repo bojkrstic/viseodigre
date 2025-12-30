@@ -127,6 +127,44 @@ section{padding:28px 0}
 }
 .meta{font-size:12px; color:var(--muted); display:flex; gap:10px; align-items:center}
 .pill{font-size:12px; padding:4px 10px; border-radius:999px; border:1px solid var(--border); background: rgba(11,18,32,.45)}
+.adminPanel{margin-top:18px; display:flex; flex-direction:column; gap:12px}
+.adminPanel form{display:flex; flex-direction:column; gap:12px}
+.field label{display:block; font-size:12px; color:var(--muted); margin-bottom:4px}
+.field input,
+.field textarea,
+.field select{
+  width:100%;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:rgba(11,18,32,.55);
+  color:var(--text);
+  padding:10px 12px;
+  font-size:14px;
+  outline:none;
+}
+.field textarea{resize:vertical; min-height:120px}
+.adminTop{display:flex; align-items:center; justify-content:space-between; gap:14px; margin-bottom:4px}
+.formActions{display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap}
+.adminList{margin-top:12px; display:flex; flex-direction:column; gap:10px}
+.adminListItem{
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  background:rgba(11,18,32,.4);
+}
+.adminListItem h5{margin:0; font-size:14px}
+.adminListItem small{display:block; color:var(--muted); font-size:12px}
+.adminListItem .actions{display:flex; gap:8px; flex-wrap:wrap}
+[data-news-feedback][data-state="error"],
+[data-login-feedback][data-state="error"]{color:#fca5a5}
+[data-news-feedback][data-state="success"],
+[data-login-feedback][data-state="success"]{color:#86efac}
+[data-news-feedback][data-state="info"],
+[data-login-feedback][data-state="info"]{color:var(--muted)}
 
 /* Fixtures */
 .fixtures{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
